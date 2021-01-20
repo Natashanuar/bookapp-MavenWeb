@@ -1,4 +1,10 @@
 pipeline{
+  
+  agent any
+    tools {
+      maven 'Maven'
+  }
+  
   stages {
     stage ('Cloning Git') {
       steps {
