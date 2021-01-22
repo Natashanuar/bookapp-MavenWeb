@@ -6,6 +6,12 @@
   <packaging>war</packaging>
   <name>bookapp</name>
   <description>maven web project</description>
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>provided</scope>
+</dependency>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -23,12 +29,6 @@
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
-          <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.0.1</version>
-    <scope>provided</scope>
-</dependency>
       </plugin>
     </plugins>  
   </build>
