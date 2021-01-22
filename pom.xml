@@ -24,15 +24,6 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin> 
-    <plugin>
-      <dependencies>
-        <dependency>
-             <groupId>javax.servlet</groupId>
-             <artifactId>javax.servlet-api</artifactId>
-             <version>3.0.1</version>
-             <scope>provided</scope>
-        </dependency>
-      </dependencies>
     </plugin>
    </plugins> 
   </build>
