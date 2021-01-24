@@ -7,17 +7,11 @@ pipeline{
   stages {
     stage ('Cloning Git') {
       steps {
-        git 'https://github.com/Natashanuar/bookapp-web.git'
+        git 'https://github.com/Natashanuar/bookapp-MavenWeb.git'
      }
     }
     
-    /*stage {
-      stage ('Check-Git-Secrets') {
-        sh 'docker pull gesellix/trufflehog
-        sh docker run -t gesellix/trufflehog --json > trufflehog
-      }
-    }*/
-    
+  
     stage ('Initialize') {
       steps {
         sh '''
@@ -25,6 +19,13 @@ pipeline{
                     echo "M2_HOME = ${M2_HOME}"
             ''' 
      }
+    }
+    
+      stage {
+      stage ('Check-Git-Secrets') {
+        sh 'docker pull gesellix/trufflehog
+        sh docker run -t gesellix/trufflehog --json > trufflehog
+      }
     }
     
    stage ('Software Composition Analysis') {
