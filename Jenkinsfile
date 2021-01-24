@@ -21,11 +21,12 @@ pipeline{
      }
     }
     
-      stage {
-      stage ('Check-Git-Secrets') {
-        sh 'docker pull gesellix/trufflehog
-        sh docker run -t gesellix/trufflehog --json > trufflehog
-      }
+      stage ('Check-Git-Secrets'){
+        steps{
+        sh 'rm trufflehog || true'
+        sh 'docker run gesellix/trufflehog --json https://github.com/Natashanuar/bookapp-MavenWeb.git > trufflehog'
+        sh 'cat trufflehog'
+       }
     }
     
    stage ('Software Composition Analysis') {
